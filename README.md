@@ -12,6 +12,8 @@ Generally, folders that end on `_shapes` contain the SHACL shapes used to perfor
 - `dblp_shapes` contains our three shapes used for the DBLP experiment
 
 ## Information on data
+The data can be downloaded from https://zenodo.org/doi/10.5281/zenodo.10980025 and should be put in the respective folders.
+
 Generally, folders that end on `_data` contains RDF data related to the experiments. To use the data with DuckDB, it first needs to be converted to a DuckDB database. Code to do this can for example be found in `sqltools/synthetic_experiments.py`, but the databases can also be found in the `sqltools/wd_*` directories.
 To use the data with Jena SHACL using TDB, you should load the data into a TDB database first, using the Jena tool `tdbloader`. Generally, the data should be stored in `sqltools/wd_*`.
 
