@@ -1,0 +1,24 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.com/> .
+@prefix schema: <http://schema.org/> .
+@prefix company: <http://example.com/Exercise3/> .
+
+# shape 3
+:Shape3 a sh:NodeShape ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path schema:friend ;
+        sh:qualifiedValueShape :x ;
+        sh:qualifiedMinCount 1 ;
+    ] .
+
+:x a sh:NodeShape ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path schema:CEO-of ;
+        sh:minCount 3 ; #EDIT
+    ] .
+
+:Shape3 sh:targetClass :human .

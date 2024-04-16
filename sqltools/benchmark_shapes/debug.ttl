@@ -1,0 +1,14 @@
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <http://gdb.benchmark.com/>.
+
+:debug a sh:NodeShape;
+    sh:targetSubjectsOf schema:addressCountry;
+    sh:property [
+        sh:path schema:addressCountry;
+        sh:not [ sh:nodeKind sh:IRI ];
+        sh:message "Country not set or invalid, must be 'AT'"
+    ] .

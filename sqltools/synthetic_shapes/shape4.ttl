@@ -1,0 +1,15 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://example.com/> .
+@prefix schema: <http://schema.org/> .
+
+# shape 4
+:Shape4 a sh:NodeShape ;
+    sh:not [
+        a sh:PropertyShape ;
+        sh:path :colleague ;
+        sh:disjoint :friend ;
+    ].
+
+:Shape4 sh:targetClass :human .

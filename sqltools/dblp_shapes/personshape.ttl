@@ -1,0 +1,18 @@
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dblp: <https://dblp.org/rdf/schema#> .
+@prefix : <http://example.com/dblpshape#> .
+
+:PersonShape a sh:NodeShape ;
+    sh:targetClass dblp:Person ;
+    sh:property [
+        sh:path dblp:primaryAffiliation ;
+        sh:minCount 1;
+        sh:maxCount 1
+    ] ;
+    sh:not [
+        sh:path dblp:primaryAffiliation ;
+        sh:disjoint dblp:affiliation 
+    ] .

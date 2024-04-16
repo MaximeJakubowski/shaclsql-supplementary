@@ -1,0 +1,24 @@
+PREFIX dblp: <https://dblp.org/rdf/schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT {
+      ?author a dblp:Person ;
+      	      dblp:primaryCreatorName ?primeName ;
+	      dblp:primaryAffiliation ?primeAffiliation ;
+	      dblp:affiliation ?affiliation ;
+	      dblp:orcid ?orcid .
+}
+WHERE {
+      ?author a dblp:Person ;
+      	      dblp:primaryCreatorName ?primeName ;
+	      dblp:primaryAffiliation ?primeAffiliation ;
+     	      dblp:affiliation ?affiliation ;
+	      dblp:orcid ?orcid .
+      ?pub dblp:yearOfPublication ?year ;
+              dblp:authoredBy ?author .
+      FILTER ( ?year IN ( "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear> ) )
+
+# FILTER ( ?year IN ( "2023"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2022"^^<http://www.w3.org/2001/XMLSchema#gYear>, "2021"^^<http://www.w3.org/2001/XMLSchema#gYear> , "2020"^^<http://www.w3.org/2001/XMLSchema#gYear> , "2019"^^<http://www.w3.org/2001/XMLSchema#gYear> , "2018"^^<http://www.w3.org/2001/XMLSchema#gYear> ) )
+} 

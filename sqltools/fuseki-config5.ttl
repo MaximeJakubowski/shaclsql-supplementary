@@ -1,0 +1,68 @@
+PREFIX fuseki:  <http://jena.apache.org/fuseki#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tdb:    <http://jena.hpl.hp.com/2008/tdb#>
+#PREFIXemacs tdb2:    <http://jena.apache.org/2016/tdb#>
+PREFIX ja:      <http://jena.hpl.hp.com/2005/11/Assembler#>
+PREFIX :        <#>
+
+[] rdf:type fuseki:Server ;
+   fuseki:services (
+       <#service1>
+       <#service2>
+       <#service3>
+       <#service5>
+       <#service6>
+       <#service7>
+   ) .
+
+<#service1> rdf:type fuseki:Service ;
+    fuseki:name     "/data1" ;
+    fuseki:endpoint  [ fuseki:operation fuseki:query ];
+    fuseki:dataset  <#dataset1> ;
+    .
+
+<#dataset1> rdf:type tdb:DatasetTDB ;
+   tdb:location "./wd_synthetic/data1_5mio_tdb/" . # SET CORRECT PATH
+
+<#service2> rdf:type fuseki:Service ;
+    fuseki:name     "/data2" ;
+    fuseki:endpoint  [ fuseki:operation fuseki:query ];
+    fuseki:dataset  <#dataset2> ;
+    .
+
+<#dataset2> rdf:type tdb:DatasetTDB ;
+   tdb:location "./wd_synthetic/data2_5mio_tdb/" . # SET CORRECT PATH
+
+<#service3> rdf:type fuseki:Service ;
+    fuseki:name     "/data3" ;
+    fuseki:endpoint  [ fuseki:operation fuseki:query ];
+    fuseki:dataset  <#dataset3> ;
+    .
+
+<#dataset3> rdf:type tdb:DatasetTDB ;
+   tdb:location "./wd_synthetic/data3_5mio_tdb/" . # SET CORRECT PATH
+
+<#service5> rdf:type fuseki:Service ;
+    fuseki:name     "/data5" ;
+    fuseki:endpoint  [ fuseki:operation fuseki:query ];
+    fuseki:dataset  <#dataset5> ;
+    .
+
+<#dataset5> rdf:type tdb:DatasetTDB ;
+   tdb:location "./wd_synthetic/data5_5mio_tdb/" . # SET CORRECT PATH
+
+<#service6> rdf:type fuseki:Service ;
+    fuseki:name     "/data6" ;
+    fuseki:endpoint  [ fuseki:operation fuseki:query ];
+    fuseki:dataset  <#dataset6> ;
+    .
+
+<#dataset6> rdf:type tdb:DatasetTDB ;
+   tdb:location "./wd_synthetic/data6_5mio_tdb/" . # SET CORRECT PATH
+
+<#service7> rdf:type fuseki:Service ;
+    fuseki:name     "/data7" ;
+    fuseki:endpoint  [ fuseki:operation fuseki:query ];
+    fuseki:dataset  <#dataset6> ;
+    .

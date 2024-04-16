@@ -1,0 +1,14 @@
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dblp: <https://dblp.org/rdf/schema#> .
+@prefix : <http://example.com/dblpshape#> .
+
+:PublicationShape a sh:NodeShape ;
+    sh:targetClass dblp:Publication ;
+    sh:property [
+        sh:path dblp:authoredBy ;
+        sh:minCount 1 ;
+        sh:class dblp:Person
+    ].
