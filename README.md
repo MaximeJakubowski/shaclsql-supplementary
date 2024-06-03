@@ -18,10 +18,10 @@ Generally, folders that end on `_data` contains RDF data related to the experime
 To use the data with Jena SHACL using TDB, you should load the data into a TDB database first, using the Jena tool `tdbloader`. Generally, the data should be stored in `sqltools/wd_*`.
 
 ### Benchmark experiments
-The `benchmark_data` folder contains files of 10, 15 and 20 million triple (random) subsets of the 30 million triple knowledge graph from the SHACL benchmark paper.
+The `benchmark_data` folder (which can be found after unpacking, see above) contains files of 10, 15 and 20 million triple (random) subsets of the 30 million triple knowledge graph from the SHACL benchmark paper.
 
 ### Synthetic experiments
-The `synthetic_data` folder contains directories for every shape number. In these directories, you can find datasets of sizes 1 to 5 million, 10 million, 15 million and 20 millions triples. This is generated for each shape, using our data generators. We give a detailed description of these data generators. The specific parameters can be found in the files `sqltools/synthetic_parallel_data_generatorX.sh`.
+The `synthetic_data` folder (which can be found after unpacking, see above) contains directories for every shape number. In these directories, you can find datasets of sizes 1 to 5 million, 10 million, 15 million and 20 millions triples. This is generated for each shape, using our data generators. We give a detailed description of these data generators. The specific parameters can be found in the files `sqltools/synthetic_parallel_data_generatorX.sh`.
 - Shape 1: generate `H` humans, `P` phone numbers and `E` email addresses. Give every human between `P1` and `P2` phone numbers with probability `Pp`, and between `E1` and `E2` email addresses with probability `Pe`.
 - Shape 2: generate `H` humans, and `M` managers. The number of managers for every human is between `M1` and `M2`.
 - Shape 3: generate `H` humans, `F` friends and `C` companies. Every human has a number of friends (within some range). Every friend is the CEO of a number of companies within some range. 
@@ -35,7 +35,7 @@ for each.
 - Shape 10: there is a set of humans which all get a number of start and end dates which all fall within a range. There “dates” are simply integers.
 
 ### DBLP experiments
-The data can be found in the `sqltools/dblp_data` folder. Specifically for the year 2023, but also for 2022 and 2023 combined. The subsets were generated from the full DBLP database. We loaded it into Jena TDB and using SPARQL CONSTRUCT queries, obtained the desired subsets. These queries can be found in the `sqltool/sparql` folder. The scripts in those folders represent the workflow to obtain the datasets.
+The data can be found in the `sqltools/dblp_data` folder (which can be found after unpacking, see above). Specifically for the year 2023, but also for 2022 and 2023 combined. The subsets were generated from the full DBLP database. We loaded it into Jena TDB and using SPARQL CONSTRUCT queries, obtained the desired subsets. These queries can be found in the `sqltool/sparql` folder. The scripts in those folders represent the workflow to obtain the datasets.
 
 ## Running the experiments
 Make sure you are within a python virtual environment with all packages mentioned in `requirements.txt` installed there. It is also necessary to install all Apache Jena command line tools, like `tdbloader`, `shacl`, etc. Also, we used Apache Jena Fuseki as our SPARQL endpoint.
