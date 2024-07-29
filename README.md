@@ -66,3 +66,16 @@ To get an idea of the output of `shuq`, the `sqltools/shuq_cli.py` program is a 
 
 ### Database loader package: `converter`
 The python package `converter` contains functionality to turn turtle files into a DuckDB database. For data that does not fit in memory, it uses the `rdflib` BerkeleyDB Store plugin to first load the data into an intermediate representation. This significantly increases the duration of graph operations. 
+
+## Information on synthetic shape 7
+We reused the dataset for shape 6 to also test shape 7. In retrospect
+that was careless, as this dataset has a lot of subjects but very few
+objects, so there are very few targets. SQL retrieves all persons and
+subtracts these from the small list of emails. It still does this in 1
+second, but Jena just looks at the very few targets. We already noted
+in the Tyrol experiments that small target sizes skew the
+comparison. 
+
+In the folder `extra_shape7/` you can find a more balanced dataset
+(and an ad-hoc data generator) to rerun the synthetic experiments and
+see that the quirk disappears.
