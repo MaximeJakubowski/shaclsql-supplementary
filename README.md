@@ -2,6 +2,11 @@
 
 This repository contains all information related to the experiments performed for the paper "Compiling SHACL into SQL".
 
+## Paper and ISWC 2024 Slides
+
+- You can find the paper in the pre-print [here](https://ebiquity.umbc.edu/iswc24preprints.pdf).
+- The slides can be found [here](https://www.mjakubowski.info/files/slides/iswc2024.pdf).
+
 ## Information on shapes
 Generally, folders that end on `_shapes` contain the SHACL shapes used to perform experiments;
 - `benchmark_shapes` contains all the Tyrolian KG benchmark shapes
