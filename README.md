@@ -4,7 +4,7 @@ This repository contains all information related to the experiments performed fo
 
 ## Paper and ISWC 2024 Slides
 
-- You can find the paper in the pre-print [here](https://ebiquity.umbc.edu/iswc24preprints.pdf).
+- You can find the paper in the pre-print [here](https://drive.google.com/file/d/1P0OXnCLzpSk442kumc1_lTHdkVZhifLg/view).
 - The slides can be found [here](https://www.mjakubowski.info/files/slides/iswc2024.pdf).
 
 ## Information on shapes
